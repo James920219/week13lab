@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>week13lab</title>
+</head>
+<body>
+	<div class="border">
+		<h1>JS Caculator</h1>
+		<div class="num">
+			<div><label for="num1">Number1</label></div>
+			<input type="text" id="num1">
+		</div>
+		<div class="num">
+			<div><label for="num2">Number2</label></div>
+			<input type="text" id="num2">
+		</div>
+		<div class="num">
+			<div><label for="way">How to operate </label></div>
+			<select id="way" name="way">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+			</select>
+		</div>
+		<input type="button" id="run" value="RUN" style="background-color: orange;" >
+		<div>
+			<label id="result"> Result = </label>
+		</div>
+	</div>
+	<script >
+		
+		function start(){
+			const input1 = document.getElementById("num1");
+			const input2 = document.getElementById("num2");
+			const way = document.getElementById("way");
+
+			document.getElementById("run").addEventListener("click", ()=>{
+				calculate(parseFloat(input1.value), parseFloat(input2.value), way.value);
+			});
+		}
+
+		function calculate(num1,num2, way){
+			var out;
+			switch(way)
+			{
+				case "+":
+					out = add(num1, num2);
+					break;
+				case "-":
+					out = minus(num1, num2);
+					break;
+				case "*":
+					out = multiply(num1, num2);
+					break;
+				case "/":
+					out = devide(num1, num2);
+					break;
+			}
+			document.getElementById("result").innerText = "Result ="+out;
+		}
+
+
+
+
+		function add(num1, num2) {
+			return num1+num2;
+		}
+
+		function minus(num1, num2) {
+			return num1-num2;
+		}
+
+		function multiply(num1, num2) {
+			return num1*num2;
+		}
+
+		function devide(num1, num2) {
+			return num1/num2;
+		}
+
+		window.addEventListener("load",start);
+	</script>
+	
+
+</body>
+</html>
