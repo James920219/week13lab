@@ -1,0 +1,19 @@
+.hover:hover{
+	background-color: red;
+	transform:scale(1.2);
+}
+
+.resultTable{
+	border-style: dashed;
+	font-family: fantasy;
+	background-color: purple;
+}
+
+.allBackground{
+        width:300px;
+        background-color:#C4C4C4;
+        position:relative;
+        margin: auto;
+        border-style: dashed;
+        border-color: red;
+    }

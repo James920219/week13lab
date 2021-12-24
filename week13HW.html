@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>week13HW</title>
+	<link rel="stylesheet" type="text/css" href="week13HWCSS.css">
+</head>
+<body>
+	<div class="allBackground">
+		<h1>Guessing Game</h1>
+		<form>
+			<p><label>Your Guess(1~100)</label></p>
+			<input type="text" name="input" id="input">
+		</form>
+		
+		<p><input type="button" value="play" class="hover" id="play" onclick="run()"></p>
+
+		<table id="result">Result</table>
+	</div>
+
+	<script>
+		
+		
+		
+		var anwser=Math.floor(Math.random()*100+1);
+		var min=1;
+		var max=100;
+
+		function run(){
+			var input=document.getElementById("input").value;
+			console.log(input);
+			if(input==anwser){
+				alert('Victory!');
+			}
+			
+			else if(input!=anwser){
+				if(input>anwser){
+				if (input<max){max=input;}
+				var a=document.createElement("tr");
+				var b=document.createElement("td");
+				var text=document.createTextNode(min+"~"+max);
+				b.appendChild(text);
+				a.appendChild(b);
+				document.getElementById("result").appendChild(a);
+				
+				}else
+				if (input<anwser) {
+					if (input>min){min=input}
+					var a=document.createElement("tr");
+					var b=document.createElement("td");
+					var text=document.createTextNode(min+"~"+max);
+					b.appendChild(text);
+					a.appendChild(b);
+					document.getElementById("result").appendChild(a);
+					
+				}
+			}
+		}	
+
+			
+		
+		
+	</script>
+</body>
+</html>
